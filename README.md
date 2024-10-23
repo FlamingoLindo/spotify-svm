@@ -152,7 +152,7 @@ A acurácia do modelo SVC, ao ser ajustada com os melhores hiperparâmetros, apr
 
 A Figura 2 apresenta a matriz de confusão, que compara os valores reais e os previstos pelo modelo descrito anteriormente.
 
-![Figura 2. Matriz de Confusão (Real vs Previsto)](./images/figura2.png)
+![Figura 2. Matriz de Confusão (Real vs Previsto)](https://github.com/FlamingoLindo/spotify-svm/blob/main/images/matrix/MATRIX2(POPULARITY)_Sat%20Oct%2019%2012-58-03%202024.png)
 
 ---
 
@@ -164,7 +164,7 @@ RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 10 de 22
 
 A Figura 3 demonstra a importância de cada variável no modelo.
 
-![Figura 3. Permutação (Importância das features)](./images/figura3.png)
+![Figura 3. Permutação (Importância das features)](https://github.com/FlamingoLindo/spotify-svm/blob/main/images/features/FEATURES(POPULARITY)_Sat%20Oct%2019%2012-58-07%202024.png)
 
 ---
 
@@ -180,7 +180,7 @@ Foi utilizada a mesma sequência de procedimentos descrita até a Seção anteri
 
 A matriz de confusão foi gerada utilizando as bibliotecas seaborn e matplotlib para visualizar a comparação entre os valores reais e os previstos pelo modelo, conforme ilustrado na Figura 4.
 
-![Figura 4. Matriz de Confusão (SVM Linear)](./images/figura4.png)
+![Figura 4. Matriz de Confusão (SVM Linear)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/1.png)
 
 #### Acurácia
 
@@ -208,7 +208,7 @@ A acurácia do modelo SVC, após o ajuste com os melhores hiperparâmetros, não
 
 A Figura 5 apresenta a matriz de confusão, que compara os valores reais e os previstos pelo modelo descrito anteriormente.
 
-![Figura 5. Matriz de Confusão (Real vs Previsto)](./images/figura5.png)
+![Figura 5. Matriz de Confusão (Real vs Previsto)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/2.png)
 
 ---
 
@@ -218,7 +218,7 @@ RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 13 de 22
 
 A Figura 6 demonstra a importância de cada variável no modelo.
 
-![Figura 6. Permutação (Importância das features)](./images/figura6.png)
+![Figura 6. Permutação (Importância das features)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/3.png)
 
 ---
 
