@@ -1,4 +1,46 @@
-# Revista Cientifica UMC | RCUMC | ISSN: 2525-5150
+# Revista Científica UMC | RCUMC | ISSN: 2525-5150
+
+RCUMC | Vol. 08 | N. 03 | Ano 2024
+
+## Capa do artigo
+
+### Título em Português:
+Aplicação de métodos de aprendizado de máquina supervisionado para classificação de popularidade e gêneros de músicas brasileiras utilizando SVM.
+
+### Título em Inglês:
+Application of supervised machine learning methods to classify popularity and genres of Brazilian songs using SVM.
+
+### Título em Espanhol:
+Aplicación de métodos supervisados de aprendizaje automático para clasificar popularidad y géneros de canciones brasileñas utilizando SVM.
+
+---
+
+### Autores:
+
+| Nome             | E-mail                           | ORCID                                      |
+|------------------|----------------------------------|--------------------------------------------|
+| Augusto Paschoal  | augusto0610@icloud.com           | https://orcid.org/0009-0000-3899-4942 |
+| Bruno Melo       | brunopfc865@gmail.com            | https://orcid.org/0009-0006-2310-2431 |
+| Bryan Henrique   | bryan.mestresdaweb@gmail.com      |https://orcid.org/0009-0006-4682-2028 |
+| Caio Zampini     | caio.zampini@gmail.com           | https://orcid.org/0009-0000-1173-2862 |
+| Carlos Henrique  | carlitossilva100@gmail.com       | https://orcid.org/0009-0009-5160-7324 |
+| Davi Ferreira    | daviferreira0106@gmail.com       | https://orcid.org/0009-0009-5436-7514 |
+| Lucas Lizot      | lizotllm@gmail.com               | https://orcid.org/0009-0004-7581-0574 |
+| Ronald Ivan      | Roaldivan78348@gmail.com         |https://orcid.org/0009-0007-7276-9563 |
+| Vitor Ferreira   | vitorantunes2003@gmail.com       |https://orcid.org/0009-0007-0485-5275 |
+| Victor Matsunaga | victoryuzoumc@gmail.com          |https://orcid.org/0009-0008-4943-5837 |
+
+---
+
+### Instituições:
+1. Universidade de Mogi das Cruzes, Mogi das Cruzes, São Paulo, Brasil.
+
+---
+
+### Informações:
+
+- **Tipo de publicação**: Resumo Expandido
+- **Área do Conhecimento**: Áreas Exatas e Tecnologias
 
 RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 1 de 22
 
