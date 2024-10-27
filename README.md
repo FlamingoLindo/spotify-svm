@@ -389,3 +389,25 @@ RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 22 de 22
 
 ---
 
+```mermaid
+
+flowchart TD
+    A[(Coleta de dados)] --> B(Pré-processamento dos dados) --> C(Divisão dos dados em treino e teste)
+    C --> D(Treinamento do modelo) --> E(Avaliação do modelo) --> F(Interpretação do modelo)
+    F --> G(Aprimoramento do modelo)
+    G --> E
+    G --> H(Resultados finais)
+    H --> I(Conclusão)
+  
+  %% Add colors to each stage
+    style A fill:#72bbf7,stroke:#333,stroke-width:2px
+    style B fill:#72bbf7,stroke:#333,stroke-width:2px
+    style C fill:#72bbf7,stroke:#333,stroke-width:2px
+    style D fill:#72bbf7,stroke:#333,stroke-width:2px
+    style E fill:#72bbf7,stroke:#333,stroke-width:2px
+    style F fill:#72bbf7,stroke:#333,stroke-width:2px
+    style G fill:#72bbf7,stroke:#333,stroke-width:2px
+    style H fill:#72bbf7,stroke:#333,stroke-width:2px
+    style I fill:#72bbf7,stroke:#333,stroke-width:2px
+
+```
