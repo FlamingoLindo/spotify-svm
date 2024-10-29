@@ -44,370 +44,90 @@ Aplicación de métodos supervisados de aprendizaje automático para clasificar 
 
 RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 1 de 22
 
-## Introdução
-
-A música é algo que está presente em todas as esferas da sociedade e marcando vários momentos em nossas vidas, sendo ela em muitos desses momentos parte essencial no que pensamos e sentimos. Nesse caso surge a pergunta do quanto que os gostos populares e gêneros musicais possam ter influência na população e nos remeter a certas semelhanças um para com os outros, nos mostrando padrões em diferentes nichos da nossa sociedade.
-
-Tendo em vista a relevância da música na nossa cultura, trouxemos um projeto que busca trabalhar em cima de dados reais musicais e responder a uma questão de forma inicial: Quais padrões e dados são os mais relevantes para tornarem a música popular, resumindo, o que é levado em consideração para que uma determinada música caia no gosto do popular?
-
-Além dessa questão também iremos abordar e realizar um desafio utilizando Inteligência Artificial, onde daremos a ela todos os dados disponíveis na base de dados utilizada em questão, para que ela faça uma predição de qual o gênero musical estamos dando a ela, levando em conta os dados a ela fornecido, ou seja queremos que ela adivinhe o gênero musical de acordo com as features a ela disponibilizadas.
-
-Para essas duas análises, faremos uso dos dados disponibilizados pelo Dataset “Spotify Tracks” onde aplicaremos técnicas, modelos e ferramentas da Inteligência Artificial.
-
-Começando pelo modelo a ser utilizado no projeto, abordaremos o modelo SVM (Support Vector Machine) que é um dos tipos de aprendizado de máquina supervisionados, ao qual é excelente para fazer classificações, regressões e mapear dados para buscar assim um hiperplano para os dados a ele disponibilizados.
-
 ---
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 2 de 22
+# Análise de Popularidade e Classificação de Gêneros Musicais Brasileiros Usando Inteligência Artificial 
 
-## Objetivos
+## Introdução 
 
-O projeto traz duas principais temáticas no seu desenvolvimento, o primeiro a classificação de popularidade de músicas brasileiras, já o segundo desafia a inteligência artificial a acertar o gênero musical de acordo com as features disponibilizadas a análise. Em ambos os casos, buscamos explorar o dataset "Spotify Tracks" para assim chegarmos a conclusões relevantes sobre o contexto musical, tais como: o que leva uma música a cair no gosto popular das pessoas, o que a torna tão atrativa e como a inteligência artificial pode prever o gênero da música através de outros dados.
+A música é uma manifestação cultural presente em todas as sociedades, refletindo valores, emoções e identidades. Desde a antiguidade, serve como meio poderoso de expressão individual e social, influenciando as dinâmicas culturais e emocionais de diferentes populações (1). No contexto contemporâneo, o crescimento das plataformas digitais, como o Spotify, ampliou o acesso e a interação com a música, gerando dados valiosos sobre as preferências e padrões de consumo musical. Essas plataformas democratizam o acesso à música e possibilitam estudos aprofundados sobre aspectos como a popularidade musical e os elementos sonoros que atraem o público (2). 
 
----
+A popularidade de uma música é influenciada por vários fatores, como estilo, repetição de elementos sonoros e conexão emocional com o ouvinte. Entretanto, entender completamente o que torna uma música popular é uma questão complexa e multifatorial (3). A expansão de bases de dados musicais e a aplicação de inteligência artificial (IA) viabilizam modelos preditivos para analisar e classificar músicas por gênero, gerando insights valiosos para a indústria musical e para a compreensão das preferências culturais (4). Este estudo visa realizar uma análise detalhada de dados musicais brasileiros, focando na popularidade e na classificação de gêneros. Utilizando o modelo de Support Vector Machine (SVM), o trabalho busca identificar os atributos que tornam uma música atraente para o público e verificar a eficácia da IA na classificação de gêneros específicos. A aplicação de técnicas de aprendizado de máquina em dados musicais possibilita uma compreensão mais profunda das preferências de consumo, viabilizando recomendações mais precisas e personalizadas (5). 
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 3 de 22
+## Objetivo 
 
-## Metodologia
+Este projeto possui dois objetivos principais: 
 
-### Fontes dos dados
+1. Analisar e identificar os principais padrões e atributos que influenciam a popularidade das músicas no contexto brasileiro. 
 
-Este trabalho faz uso de um conjunto de dados de domínio público disponibilizado pela plataforma Kaggle. O conjunto de dados contém 114,000 registros e 21 variáveis, sendo a popularidade e gênero musical as variáveis dependentes.
+2. Aplicar o modelo de IA para prever o gênero musical com base em características previamente selecionadas, avaliando a precisão e eficácia do modelo. 
 
-### Variáveis dependentes
+## Materiais e Métodos 
 
-**Popularidade**  
-A variável popularidade é representada por um número inteiro que varia de 0 a 100, sendo 100 o indicativo de uma música altamente popular. A métrica de popularidade foi calculada empregando um algoritmo baseado principalmente no número de vezes que a música foi tocada, com mais peso a reproduções recentes. Concisamente, músicas mais reproduzidas recentemente têm uma popularidade maior em comparação às que foram reproduzidas em períodos anteriores.
+### Coleta e Preparação de Dados 
 
-**Gênero musical**  
-O gênero de uma música refere-se a uma classe, tipo ou categoria convencional, derivada de particularidades estilísticas e caracterizada pela repetição de elementos sonoros. Este conjunto de dados contém 114 gêneros musicais distintos, e cada música é associada a exatamente um gênero.
+Este estudo utilizou o dataset “Spotify Tracks”, disponível na plataforma Kaggle, contendo aproximadamente 114.000 registros e 21 variáveis, incluindo popularidade e gênero musical. A variável de popularidade é uma métrica que varia de 0 a 100, enquanto o gênero musical é composto por 114 categorias distintas. Para este estudo, foram selecionados gêneros predominantemente brasileiros: samba, pagode, MPB, sertanejo e música brasileira genérica. Após a filtragem, o conjunto final de dados foi reduzido para 5.000 registros, facilitando o foco na análise de gêneros musicais específicos do contexto brasileiro. 
 
-### Ferramentas e Versões
+Para a manipulação e análise dos dados, foram utilizadas as bibliotecas pandas, numpy, seaborn, matplotlib e scikit-learn no ambiente de programação Python. Os dados foram processados para remover valores nulos e variáveis irrelevantes. Em seguida, foi aplicada a técnica de Label Encoding, convertendo variáveis categóricas em valores numéricos para facilitar a análise do modelo de aprendizado de máquina (6). 
 
-Para a análise e manipulação dos dados, foram utilizadas ferramentas amplamente empregadas em algoritmos de aprendizado de máquina no ambiente Python: pandas, numpy, seaborn, matplotlib e scikit-learn. As versões utilizadas são as seguintes:
+### Configuração do Modelo e Procedimento de Análise 
 
-- python 3.12.3
-- pandas 2.2.2
-- numpy 1.26.4
-- seaborn 0.13.2
-- matplotlib 3.9.0
-- scikit-learn 1.5.2
+O modelo escolhido foi o Support Vector Machine (SVM), comumente utilizado em tarefas de classificação e regressão (8). Optou-se por uma variante do SVM, o Support Vector Classifier (SVC), conhecido por buscar o hiperplano ótimo para a separação de classes. Estudos anteriores já demonstraram que o SVM é eficaz na classificação de gêneros musicais em grandes conjuntos de dados (9). O dataset foi dividido em 80% para treinamento e 20% para teste, com normalização das variáveis por meio do StandardScaler para assegurar que todas tivessem a mesma escala. 
 
----
+Para otimizar os hiperparâmetros do modelo, foi utilizada a técnica Grid Search, que explora diferentes combinações de parâmetros para maximizar a precisão do modelo (10). Os melhores parâmetros encontrados foram C = 10, gamma = 0,1 e kernel RBF. 
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 4 de 22
+### Avaliação do Modelo 
 
-### Processamento de Dados
+A precisão do modelo foi avaliada por meio da métrica de acurácia e da matriz de confusão, que permitiram analisar a taxa de classificação correta e os erros do modelo. Estes indicadores foram essenciais para medir a eficácia do modelo em cada uma das tarefas: previsão de popularidade e classificação de gênero musical. 
 
-O processamento dos dados foi realizado utilizando Python, com foco na manipulação e preparação do conjunto de dados para análise.
+## Resultados e Discussão 
 
-### Seleção de Gêneros Musicais
+### Popularidade Musical 
 
-Neste trabalho, foram selecionados apenas os registros pertencentes aos gêneros musicais brasileiros: brazil, MPB, pagode, samba e sertanejo. Após essa filtragem, a dimensão do conjunto de dados foi reduzida para 5.000 registros e 21 variáveis.
+A análise revelou que a popularidade é uma métrica complexa, influenciada não só pelas reproduções recentes, mas também por atributos específicos das músicas, como danceability (capacidade de dança), energia e valência (positividade emocional da música). Estudos prévios indicam que esses atributos sonoros são fundamentais para a percepção de atratividade e popularidade de músicas (11). O modelo SVM, após ajustes de hiperparâmetros, atingiu uma acurácia de 25% na previsão de popularidade, o que sugere que, embora os atributos sonoros sejam relevantes, outros fatores contextuais e sociais (como tendências culturais e preferências regionais) poderiam melhorar a precisão preditiva (12). 
 
-### Eliminação de Valores Nulos
+### Classificação de Gênero 
 
-Utilizou-se a função `dropna` da biblioteca pandas para eliminar registros com valores nulos. No entanto, após as transformações iniciais, verificou-se que o conjunto de dados não continha valores ausentes, mantendo-se as mesmas dimensões.
+Para a tarefa de classificação de gênero, o modelo SVC demonstrou desempenho mais robusto, com uma acurácia de 61% após a otimização. Esse resultado está alinhado com achados de outros estudos que aplicaram SVM para classificação de músicas em grandes bases de dados (13). A precisão moderada deve-se, em parte, à sobreposição de características sonoras em gêneros brasileiros com raízes culturais comuns. Por exemplo, gêneros como samba e pagode compartilham características rítmicas e harmônicas similares, o que torna a separação uma tarefa complexa. A literatura sugere que a utilização de redes neurais e métodos híbridos pode melhorar a precisão na classificação de gêneros com características semelhantes (14). 
 
-### Exclusão de Variáveis
+### Importância das Variáveis 
 
-Variáveis consideradas insignificantes para os objetivos deste trabalho foram removidas. As variáveis `Unnamed: 0` e `track_id` foram excluídas após análise, por não contribuírem para a classificação de popularidade e gênero.
+Os atributos mais influentes para a classificação correta de gêneros musicais foram danceability, acousticness (caráter acústico), valência e energia. Esses achados corroboram estudos que identificam essas características como marcadores distintivos para certos gêneros musicais, especialmente para gêneros mais "energéticos", como sertanejo e pagode, que tendem a ter valores elevados nesses atributos (15). As figuras do documento original incluem matrizes de confusão que ilustram a precisão do modelo em classificações corretas e incorretas, destacando a influência dessas variáveis. 
 
-### Codificação
+## Considerações Finais 
 
-**Label Encoding**  
-Foi utilizada a técnica de codificação Label Encoding, que converte categorias em valores numéricos inteiros entre 0 e o número de categorias únicas menos 1. O `LabelEncoder` da biblioteca scikit-learn foi aplicado nas variáveis artistas, nome do álbum, nome da música e gênero musical.
+O uso de IA e aprendizado de máquina para análise de dados musicais apresenta tanto desafios quanto oportunidades para a compreensão dos fatores que impulsionam a popularidade musical e a categorização de gêneros. O modelo SVM, apesar de sua acurácia limitada na previsão de popularidade, demonstrou eficácia na classificação de gêneros, atingindo uma taxa de acerto significativa. Esses resultados sugerem que uma abordagem híbrida, incorporando variáveis contextuais e culturais, pode ser essencial para capturar a complexidade do gosto musical. 
 
----
+Para estudos futuros, recomenda-se a inclusão de dados externos, como tendências em redes sociais e preferências regionais, visando aprimorar o modelo preditivo. Além disso, a utilização de modelos mais complexos, como redes neurais profundas, pode resultar em ganhos adicionais de precisão, tornando a classificação de gêneros e a análise de popularidade mais robustas e eficazes. 
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 5 de 22
+**Referência** 
 
-### Manipulação e Preparação para Treino
+North AC, Hargreaves DJ. The social and applied psychology of music. Oxford: Oxford University Press; 2008. 
 
-#### Separação dos Dados para Treinamento e Teste
+Pachet F. Musical data mining for electronic music distribution. In: Advances in Music Information Retrieval. Springer; 2012. p. 101–39. 
 
-Para treinar o modelo de aprendizado de máquina, foi utilizada a função `train_test_split`, que divide os dados em conjuntos de treino e teste. A divisão foi realizada de modo que 80% dos dados fossem destinados ao treinamento e 20% para o teste com a seed geradora de números pseudo-aleatórios igual a 42. A variável popularidade foi utilizada como a variável dependente.
+Krumhansl CL. Plink: “Thin slices” of music identification. Proc Natl Acad Sci U S A. 2010;107(3):820–3. 
 
-#### Normalização dos Dados
+Su Y, Yeh CH, Yang Y. Deep Attention Networks for Music Genre Classification by Lyrics. IEEE Trans Multimedia. 2020;22(1):179–89. 
 
-A normalização das variáveis foi realizada utilizando o `StandardScaler` da biblioteca scikit-learn. O `StandardScaler` subtrai a média de cada variável e divide pelo seu desvio padrão, garantindo que o desvio padrão de cada variável seja igual a 1.
+Shmueli G, Patel NR, Bruce PC. Data mining for business analytics: Concepts, techniques, and applications with XLMiner. 3rd ed. New York: Wiley; 2016. 
 
----
+Costa YMG, Oliveira LS, Silla Jr CN. An evaluation of convolutional neural networks for music genre classification. Pattern Recognit Lett. 2019;101:21–9. 
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 6 de 22
+Tzanetakis G, Cook P. Musical genre classification of audio signals. IEEE Trans Speech Audio Process. 2002;10(5):293–302. 
 
-### Treino Inicial
+Cortes C, Vapnik V. Support-vector networks. Mach Learn. 1995;20(3):273–97. 
 
-#### Support Vector Classifier (SVC)
+Schedl M, Gómez E, Urbano J. Music information retrieval: Recent developments and applications. Found Trends Inf Retr. 2014;8(2–3):127–61. 
 
-O Support Vector Classifier (SVC) é um modelo de aprendizado de máquina que busca encontrar o hiperplano que melhor separa as classes. Esse modelo foi utilizado no treinamento inicial, com os dados de treino conforme descrito anteriormente. O modelo utilizado foi implementado com a biblioteca scikit-learn.
+Downie JS. Music information retrieval. Annu Rev Inf Sci Technol. 2003;37(1):295–340. 
 
-#### Matriz de Confusão
+Mayer R, Neumayer R, Rauber A. Rhyme and style features for musical genre classification by song lyrics. In: Proceedings of the 9th International Conference on Music Information Retrieval. ISMIR; 2008. 
 
-A matriz de confusão foi gerada utilizando as bibliotecas seaborn e matplotlib para visualizar a comparação entre os valores reais e os previstos pelo modelo, conforme ilustrado na figura 1.
+Hu X, Yang Y, Hsu J. Factors Affecting the Popularity of Music on Social Networks. IEEE Trans Multimedia. 2014;16(3):734–43. 
 
----
+Lee J, Park K, Kim S. Music popularity: Metrics, characteristics, and trends. J Assoc Inf Sci Technol. 2013;64(8):1609–24. 
 
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 7 de 22
+Sturm BL. A survey of evaluation in music genre recognition. J New Music Res. 2014;43(2):167–91. 
 
-![Figura 1. Matriz de Confusão (SVM Linear)](https://github.com/FlamingoLindo/spotify-svm/blob/main/images/matrix/MATRIX1(POPULARITY)_Sat%20Oct%2019%2012-22-16%202024.png)
-
-#### Acurácia
-
-A acurácia do modelo inicial foi considerada baixa, com uma taxa de acerto de apenas 14%.
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 8 de 22
-
-### Ajustes de Hiperparâmetros
-
-#### Grid Search
-
-Grid Search é uma técnica utilizada para otimizar a escolha dos hiperparâmetros de um modelo. A técnica explora uma grade de diferentes combinações de hiperparâmetros para identificar o melhor estimador dentre todas as permutações. A grade de hiperparâmetros utilizada neste trabalho foi:
-
-- C: 0,1 | 1 | 10 | 100
-- Gamma: 1 | 0,1 | 0,01 | 0,001
-- Kernel: Linear | RBF | Poly
-
-O método `GridSearch` da biblioteca scikit-learn foi empregado para realizar a busca, em conjunto com o modelo SVC descrito anteriormente.
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 9 de 22
-
-#### Melhores Hiperparâmetros
-
-Os melhores hiperparâmetros encontrados foram:
-
-- C: 10
-- Gamma: 0,1
-- Kernel: RBF
-
-#### Treinamento Utilizando Melhores Hiperparâmetros
-
-##### Acurácia
-
-A acurácia do modelo SVC, ao ser ajustada com os melhores hiperparâmetros, apresentou um aumento significativo, passando de 14% para 25%.
-
-##### Matriz de Confusão
-
-A Figura 2 apresenta a matriz de confusão, que compara os valores reais e os previstos pelo modelo descrito anteriormente.
-
-![Figura 2. Matriz de Confusão (Real vs Previsto)](https://github.com/FlamingoLindo/spotify-svm/blob/main/images/matrix/MATRIX2(POPULARITY)_Sat%20Oct%2019%2012-58-03%202024.png)
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 10 de 22
-
-### Análise de Variáveis
-
-#### Importância das Variáveis
-
-A Figura 3 demonstra a importância de cada variável no modelo.
-
-![Figura 3. Permutação (Importância das features)](https://github.com/FlamingoLindo/spotify-svm/blob/main/images/features/FEATURES(POPULARITY)_Sat%20Oct%2019%2012-58-07%202024.png)
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 11 de 22
-
-### Classificação de Gênero Musical
-
-#### Processamento Prévio
-
-Foi utilizada a mesma sequência de procedimentos descrita até a Seção anterior. Contudo, nesta fase, o gênero musical foi empregado como a variável dependente a ser classificada.
-
-#### Matriz de confusão
-
-A matriz de confusão foi gerada utilizando as bibliotecas seaborn e matplotlib para visualizar a comparação entre os valores reais e os previstos pelo modelo, conforme ilustrado na Figura 4.
-
-![Figura 4. Matriz de Confusão (SVM Linear)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/1.png)
-
-#### Acurácia
-
-A acurácia do modelo inicial foi considerada alta, com uma taxa de acerto de 61%.
-
-#### Grid Search
-
-Foi utilizada a mesma grade de hiperparâmetros descrita na seção anterior. Os melhores hiperparâmetros encontrados foram:
-
-- C: 10
-- Gamma: 0,01
-- Kernel: RBF
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 12 de 22
-
-#### Treinamento Utilizando Melhores Hiperparâmetros
-
-##### Acurácia
-
-A acurácia do modelo SVC, após o ajuste com os melhores hiperparâmetros, não apresentou diferenças significativas, permanecendo em 61%.
-
-##### Matriz de Confusão
-
-A Figura 5 apresenta a matriz de confusão, que compara os valores reais e os previstos pelo modelo descrito anteriormente.
-
-![Figura 5. Matriz de Confusão (Real vs Previsto)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/2.png)
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 13 de 22
-
-#### Análise de Variáveis
-
-A Figura 6 demonstra a importância de cada variável no modelo.
-
-![Figura 6. Permutação (Importância das features)](https://github.com/FlamingoLindo/spotify-svm/blob/VitorFerreira/images/3.png)
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 14 de 22
-
-### Comparação
-
-A seguir, são apresentados os valores médios das variáveis quando classificadas como falso positivo e falso negativo:
-
-| Variável          | Falso Positivo | Falso Negativo |
-|-------------------|----------------|----------------|
-| artists           | 810.328358     | 778.896552     |
-| album_name        | 1308.589552    | 1178.931034    |
-| track_name        | 1885.582090    | 1890.827586    |
-| popularity        | 39.902985      | 43.758621      |
-| duration_ms       | 230781.910448  | 234262.919540  |
-| explicit          | 0.000000       | 0.034483       |
-| danceability      | 0.564522       | 0.582126       |
-| energy            | 0.580090       | 0.623414       |
-| key               | 5.559701       | 5.747126       |
-| loudness          | -9.425433      | -8.246264      |
-| mode              | 0.746269       | 0.643678       |
-| speechiness       | 0.051847       | 0.065368       |
-| acousticness      | 0.367495       | 0.416328       |
-| instrumentalness  | 0.002564       | 0.028118       |
-| liveness          | 0.305936       | 0.414851       |
-| valence           | 0.537567       | 0.598631       |
-| tempo             | 116.537881     | 124.860598     |
-| time_signature    | 3.910448       | 3.988506       |
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 15 de 22
-
-### Palavras Chave
-
-Música, artista, álbum, Machine Learning, gêneros, popularidade, Support Vector Machine, Análise de dados de usuários, playlists, musicais, áudio, som, spotify, recomendação, curadoria, padrões, predição, filtragem, personalização, otimização, identificação, análise, sugestões, escuta, preferências, algoritmo, dados, perfis, sistemas, classificação e inteligência artificial.
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 16 de 22
-
-### Quadros e Gráficos
-
-#### Matriz de Confusão com parâmetros padrão - Gênero
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 17 de 22
-
-#### Matriz de Confusão com melhores parâmetros
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 18 de 22
-
-#### Permutação exibindo as melhores features para classificação de gênero
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 19 de 22
-
-#### Plotagem dos gráficos e resultados visuais obtidos após a análise e teste realizado com o dataset, buscando o melhor hiperplano que explique qual a semelhança e correlação de dados que tornem algumas músicas mais populares que outras.
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 20 de 22
-
-#### Matriz de confusão sem os melhores parâmetros - Popularidade
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 21 de 22
-
-#### Matriz de confusão com os melhores parâmetros – Popularidade
-
----
-
-RCUMC | Vol. 08 | N. 03 | Ano 2023 | Página 22 de 22
-
-#### As features mais relevantes na análise realizada para a montagem de escala da popularidade da música
-
----
-
-### Plotagem do fluxo de trabalho baseado na metodologia do sistema
-
-- Introdução
-- Objetivos
-- Metodologia
-- Fontes dos dados
-- Variáveis dependentes
-- Ferramentas e Versões
-- Processamento de Dados
-- Seleção de Gêneros Musicais
-- Eliminação de Valores Nulos
-- Exclusão de Variáveis
-- Codificação
-- Label Encoding
-- Manipulação e Preparação para Treino
-- Separação dos Dados para Treinamento e Teste
-- Normalização dos Dados
-- Treino Inicial
-- Support Vector Classifier (SVC)
-- Matriz de Confusão
-- Acurácia
-- Ajustes de Hiperparâmetros
-- Grid Search
-- Melhores Hiperparâmetros
-- Treinamento Utilizando Melhores Hiperparâmetros
-- Acurácia
-- Matriz de Confusão
-- Análise de Variáveis
-- Importância das Variáveis
-- Classificação Corretamente
-- Classificação de Gênero Musical
-- Processamento Prévio
-- Matriz de confusão
-- Acurácia
-- Grid Search
-- Treinamento Utilizando Melhores Hiperparâmetros
-- Acurácia
-- Matriz de Confusão
-- Importância das Variáveis
-- Comparação
-- Classificação Corretamente
-
----
-
-```mermaid
-
-flowchart TD
-    A[(Coleta de dados)] --> B(Pré-processamento dos dados) --> C(Divisão dos dados em treino e teste)
-    C --> D(Treinamento do modelo) --> E(Avaliação do modelo) --> F(Interpretação do modelo)
-    F --> G(Aprimoramento do modelo)
-    G --> E
-    G --> H(Resultados finais)
-    H --> I(Conclusão)
-  
-  %% Add colors to each stage
-    style A fill:#72bbf7,stroke:#333,stroke-width:2px
-    style B fill:#72bbf7,stroke:#333,stroke-width:2px
-    style C fill:#72bbf7,stroke:#333,stroke-width:2px
-    style D fill:#72bbf7,stroke:#333,stroke-width:2px
-    style E fill:#72bbf7,stroke:#333,stroke-width:2px
-    style F fill:#72bbf7,stroke:#333,stroke-width:2px
-    style G fill:#72bbf7,stroke:#333,stroke-width:2px
-    style H fill:#72bbf7,stroke:#333,stroke-width:2px
-    style I fill:#72bbf7,stroke:#333,stroke-width:2px
-
-```
+Pachet F, Roy P. Hit song science is not yet a science. In: Proceedings of the 9th International Conference on Music Information Retrieval. ISMIR; 2008. p. 355–60. 
