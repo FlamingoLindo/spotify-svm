@@ -1,4 +1,4 @@
-[PT-BR](https://github.com/FlamingoLindo/spotify-svm) | [ENG]([https://github.com/FlamingoLindo/spotify-svm](https://github.com/FlamingoLindo/spotify-svm/blob/main/ENG/Popularity_Analysis_and_Classification.md)
+[PT-BR](https://github.com/FlamingoLindo/spotify-svm) | [ENG](https://github.com/FlamingoLindo/spotify-svm/blob/main/ENG/Popularity_Analysis_and_Classification.md)
 
 ---
 
