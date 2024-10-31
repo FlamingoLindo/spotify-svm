@@ -22,12 +22,12 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 ### Library and Python Versions Used
 
-==Python 3.12.3==
-==Pandas 2.2.2==
-==Numpy 1.26.4==
-==Seaborn 0.13.2==
-==Matplotlib 3.9.0==
-==Sklearn 1.5.2==
+* Python 3.12.3
+* Pandas 2.2.2
+* Numpy 1.26.4
+* Seaborn 0.13.2
+* Matplotlib 3.9.0
+* Sklearn 1.5.2
 
 ## Loading the Dataset
 
