@@ -27,17 +27,17 @@ from sklearn.inspection import permutation_importance
 
 Versões das bibliotecas e python que foram utilizadas na execução do projeto:
 
-==Python 3.12.3==
+* Python 3.12.3
 
-==Pandas 2.2.2==
+* Pandas 2.2.2
 
-==Numpy 1.26.4==
+* Numpy 1.26.4
 
-==Seaborn 0.13.2==
+* Seaborn 0.13.2
 
-==Matplotlib 3.9..0==
+* Matplotlib 3.9..0
 
-==Sklearn 1.5.2==
+* Sklearn 1.5.2
 
 Em seguida foi importado o dataset [🎹 Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
 
