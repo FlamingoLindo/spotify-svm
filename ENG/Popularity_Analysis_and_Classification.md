@@ -25,7 +25,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.inspection import permutation_importance
 ```
 
-Python and libraries being used in the project:
+Python and libraries versions being used in the project:
 
 * Python 3.12.3
 
@@ -39,7 +39,7 @@ Python and libraries being used in the project:
 
 * Sklearn 1.5.2
 
-Then the dataset is imported [🎹 Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
+The dataset being used is [🎹 Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset) and this is how its being imported:
 
 ```python
 file_path = 'https://raw.githubusercontent.com/FlamingoLindo/spotify-svm/main/spotify.csv'
