@@ -4,8 +4,6 @@
 
 # Brazilian Songs Popularity and Genres Classification Using Artificial Intelligence
 
-O primeiro passo é importar as bibliotecas necessárias para o funcionamento do projeto, são elas:
-
 The first step is importing the necessaries libraries for the project functioning, and they are:
 
 ```python
